@@ -23,6 +23,10 @@ function register(event) {
           iUsers.push(usersInfo);
           localStorage.setItem("instaUsers", JSON.stringify(iUsers));
           alert("Registration Succesful.");
+          document.getElementById("email").value = "";
+          document.getElementById("name").value = "";
+          document.getElementById("password").value = "";
+          document.getElementById("confirmPassword").value = "";
         } else {
           alert("You're Already registered.");
           window.location.href = `./Login.html`;
@@ -71,3 +75,11 @@ function login(event) {
 //   window.location.href = `./HomePage.html`;
 //   alert("hi");
 // }
+
+function redirectRegister(){
+  window.location.href = `Register.html`;
+}
+
+function redirectLogin(){
+  window.location.href = `Login.html`;
+}

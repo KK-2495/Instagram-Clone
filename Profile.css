@@ -167,6 +167,8 @@
 }
 .editProfile{
     padding: 25px;
+    /* border: 2px solid red; */
+    width: 100%;
 }
 .editProfile h1{
     font-size: 28px;
@@ -200,9 +202,9 @@
     border-radius: 50%;
 }
 .profileChanges form{
-    width: 90%;
+    width: 100%;
     margin: auto;
-    border: 1px solid blueviolet;
+    border: 1px solid rgb(148, 62, 228);
     text-align: center;
     padding: 20px 0;
 }
