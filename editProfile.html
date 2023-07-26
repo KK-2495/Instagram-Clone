@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Profile</title>
+        <link rel="stylesheet" href="./HomePage.css">
+        <link rel="stylesheet" href="./Profile.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navBar">
+                <div class="logo">
+                    <img src="https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo-2010-2013-768x432.png"
+                        alt="log" />
+                </div>
+                <div class="navBarList">
+                    <div onclick="redirectHomepage()" class="navBarOptions">
+                        <i class="fa-solid fa-house"></i>
+                        <p>Home</p>
+                    </div>
+                    <div onclick="displaySearch()" class="navBarOptions">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p>Search</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-compass"></i>
+                        <p>Explore</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-film"></i>
+                        <p>Reels</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-brands fa-facebook-messenger"></i>
+                        <p>Messages</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-regular fa-heart"></i>
+                        <p>Notifications</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-square-plus"></i>
+                        <p>Create</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-regular fa-user"></i>
+                        <p>Profile</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-bars"></i>
+                        <p>More</p>
+                    </div>
+                </div>
+                <div id="mySidebar" class="searchBar">
+                    <div>
+                        <h1>Search</h1>
+                        <form onsubmit="SearchUser(event)">
+                            <input type="search" placeholder="Search" id="Search_users" />
+                        </form>
+                    </div>
+                    <div id="search_result">
+                        <div id="sugg-head" class="sugg_div">
+                            <img src="" />
+                            <p></p>
+                        </div>
+                        <div id="no_display">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings">
+                <h2>Settings</h2>
+            </div>
+            <div class="content">
+                <div class="contents">
+                    <div class="meta">
+                        <h2>Meta Accounts Center</h2>
+                        <p>Manage your connected experiences and account settings across Meta technologies.</p>
+                        <div>Personal details</div>
+                        <div>Password and security</div>
+                        <div>Ad preferences</div>
+                        <b>See more is Accounts center</b>
+                        <div class="appsWebsites">
+                            <p>Edit Profile</p>
+                            <p>Apps and Websites</p>
+                            <p>Email Notifications</p>
+                            <p>Push Notifications</p>
+                            <p>What You See</p>
+                            <p>Who can see your content</p>
+                            <p>How others can interact with you</p>
+                            <p>Supervision</p>
+                            <p>Help</p>
+                        </div>
+                        <b>Switch to Professional account</b>
+                    </div>
+                    <div class="editProfile">
+                        <h1>Edit Profile</h1>
+                        <div class="profileChanges">
+                            <div class="profileDetails">
+                                <div id="userImage" class="profileImage">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />
+                                </div>
+                                <div class="profileName">
+                                    <b id="userSwitch">User Name</b>
+                                </div>
+                            </div>
+                            <form onsubmit="profileChanges(event)">
+                                <label>Change User Name</label>
+                                <input id="changeName" type="text" placeholder="Name" /> <br>
+                                <label>Change Profile Photo</label>
+                                <input id="changeImage" type="text" placeholder="enter image url" /> <br>
+                                <label>Bio</label>
+                                <input id="changeBio" type="text" placeholder="Name" /> <br>
+                                <input type="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.onload = function () {
+                var currentUser = JSON.parse(localStorage.getItem("instaCurrentUser"));
+                if (!!currentUser) {
+                    var showName = document.getElementById("userSwitch");
+                    var showImage = document.getElementById("userImage");
+                    var activeUserName = `<h3>${currentUser.iName}</h3>`;
+                    var userImage = `<div><img src="${currentUser.iImage}"/></div>`;
+                    showName.innerHTML = activeUserName;
+                    showImage.innerHTML = userImage;
+
+                    var insta_userData = JSON.parse(localStorage.getItem("instaUsers"));
+
+                    for(var i=0;i<insta_userData.length;i++){
+                        if(currentUser.iEmail == insta_userData[i].iEmail){
+                            currentUser.iName = insta_userData[i].iName;
+                            currentUser.iBio = insta_userData[i].iBio;
+                            currentUser.iImage = insta_userData[i].iImage;
+                        }
+                    }
+                    localStorage.setItem("instaCurrentUser", JSON.stringify(currentUser));
+                } else {
+                    alert("You've Logged out.");
+                }
+
+            }
+            // *****editProfie*********
+            function profileChanges(event) {
+                event.preventDefault();
+
+                var changeName = document.getElementById("changeName").value;
+                var changeImage = document.getElementById("changeImage").value;
+                var changeBio = document.getElementById("changeBio").value;
+
+                var insta_currentUser = JSON.parse(localStorage.getItem("instaCurrentUser"));
+                var insta_userInfo = JSON.parse(localStorage.getItem("instaUsers"));
+
+                if(insta_currentUser.iName == changeName){
+                    alert("Name is already the same");
+                }else{
+
+                    for(var i=0;i<insta_userInfo.length;i++){
+                        if(insta_currentUser.iEmail == insta_userInfo[i].iEmail){
+                            insta_userInfo[i].iName = changeName;
+                            insta_userInfo[i].iImage = changeImage;
+                            insta_userInfo[i].iBio = changeBio;
+                        }
+                    }
+                    alert("Profile Settings changed successfully");
+
+                    localStorage.setItem("instaUsers", JSON.stringify(insta_userInfo));
+                    window.location.reload();
+                }
+
+
+            }
+
+            // Search Bar & Toggle
+            function displaySearch() {
+                var get = document.querySelector(".searchBar");
+                if (get.style.display === "none") {
+                    get.style.display = "block";
+                } else {
+                    get.style.display = "none";
+                }
+            }
+            function redirectHomepage(){
+                window.location.href = `./HomePage.html`;
+            }
+
+
+        </script>
+    </body>
+
+</html>

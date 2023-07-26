@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instagram</title>
+        <link rel="stylesheet" href="./HomePage.css">
+        <script src="https://kit.fontawesome.com/3f7f3f9444.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="navBar">
+                <div class="logo">
+                    <img src="https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo-2010-2013-768x432.png"
+                        alt="log" />
+                </div>
+                <div class="navBarList">
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-house"></i>
+                        <p>Home</p>
+                    </div>
+                    <div onclick="displaySearch()" class="navBarOptions">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p>Search</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-compass"></i>
+                        <p>Explore</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-film"></i>
+                        <p>Reels</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-brands fa-facebook-messenger"></i>
+                        <p>Messages</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-regular fa-heart"></i>
+                        <p>Notifications</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-square-plus"></i>
+                        <p>Create</p>
+                    </div>
+                    <div onclick="redirectProfile()" class="navBarOptions">
+                        <i class="fa-regular fa-user"></i>
+                        <p>Profile</p>
+                    </div>
+                    <div class="navBarOptions">
+                        <i class="fa-solid fa-bars"></i>
+                        <p>More</p>
+                    </div>
+                </div>
+                <div id="mySidebar" class="searchBar">
+                    <div>
+                        <h1>Search</h1>
+                        <form onsubmit="SearchUser(event)">
+                            <input type="text" placeholder="Search" id="searchUsers" />
+                            <input type="submit">
+                        </form>
+                    </div>
+                    <div id="searchResult" class="searchResult">
+                        <div class="userList">
+                            <div class="userListName">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <b>Krish</b>
+                            </div>
+                            <div class="userListFollow">
+                                <p>Follow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div id="storyName" class="story">
+                    <div class="stories">
+                        <div>
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="story" />
+                        </div>
+                        <p>UserName</p>
+                    </div>
+                </div>
+                <div id="postName">
+                    <div class="post">
+                        <div class="posterName">
+                            <div class="posterImage">
+                                <i class="fa-regular fa-user"></i>
+                                <div class="posterInfo">
+                                    <p>name</p>
+                                    <small>location</small>
+                                </div>
+                            </div>
+                            <div class="postOptions">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                        </div>
+                        <div class="postImage">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFN5iwAHFlbfHDcpvht4j_ONtZHbMNiNCfFg&usqp=CAU"
+                                alt="posts" />
+                        </div>
+                        <div class="postLikes">
+                            <div class="likeComment">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-comment fa-flip-horizontal"></i>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </div>
+                            <div class="save"><i class="fa-regular fa-bookmark"></i></div>
+                        </div>
+                        <div class="postCaptions">
+                            <b>User</b>
+                            <p>Try to Love yourself, Little more, Everyday</p>
+                        </div>
+                        <div class="viewComment">
+                            <b>View 3 comments</b>
+                        </div>
+                        <div class="addComment">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input type="text" placeholder="Add a Comment" />
+                            <b>Post</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="suggestions">
+                <div class="userInfo">
+                    <div class="user">
+                        <div id="userImage">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />
+                        </div>
+                        <p id="userSwitch">user Name</p>
+                    </div>
+                    <div id="logout" class="follow">
+                        Switch
+                    </div>
+                </div>
+                <div class="addFollower">
+                    <div class="suggested">
+                        <h3>Suggested for you</h3>
+                        <b>See All</b>
+                    </div>
+                </div>
+                <div class="suggestedUserInfo">
+                    <div class="suggestedUser">
+                        <i class="fa-regular fa-user"></i>
+                        <p>Abhi</p>
+                    </div>
+                    <div class="follow">
+                        Follow
+                    </div>
+                </div>
+                <div class="suggestedUserInfo">
+                    <div class="suggestedUser">
+                        <i class="fa-regular fa-user"></i>
+                        <p>Vrushab</p>
+                    </div>
+                    <div class="follow">
+                        Follow
+                    </div>
+                </div>
+                <div class="suggestedUserInfo">
+                    <div class="suggestedUser">
+                        <i class="fa-regular fa-user"></i>
+                        <p>user Name</p>
+                    </div>
+                    <div class="follow">
+                        Follow
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            window.onload = function () {
+                var currentUser = JSON.parse(localStorage.getItem("instaCurrentUser"));
+                if (currentUser) {
+                    var showName = document.getElementById("userSwitch");
+                    var showImage = document.getElementById("userImage");
+                    var logoutswitch = document.getElementById("logout");
+                    var activeUserName = `<h3>${currentUser.iName}</h3>`;
+                    var userImage = `<div><img src="${currentUser.iImage}"/></div>`;
+                    var logout = `<button onclick="logout()">Log Out</button>`;
+                    showName.innerHTML = activeUserName;
+                    showImage.innerHTML = userImage;
+                    logoutswitch.innerHTML = logout;
+                } else {
+                    alert("You've Logged out.");
+                }
+                // *********Add post********
+                // var displayImage = document.getElementById("postImage");
+                // var postImage = "";
+                var displayName = document.getElementById("postName");
+                var uploadInstaPost = "";
+                // var displayCaption = document.getElementById("postCaption");
+                // var postCaption = "";
+                let insta_userData = JSON.parse(localStorage.getItem("instaUsers"));
+                let uploadPost = [];
+                for (let i=0;i<insta_userData.length; i++){
+                    if(currentUser.iEmail == insta_userData[i].iEmail){
+                        uploadPost = insta_userData[i].iPosts;
+                    }
+                }
+                for (var i = 0; i < uploadPost.length; i++) {
+                    // postImage += `<div class="postImage"><img src="${uploadPost[i].postImage}"/></div>`;
+                    uploadInstaPost += `<div class="post"><div class="posterName">
+                            <div class="posterImage">
+                                <i class="fa-regular fa-user"></i>
+                                <div class="posterInfo">
+                                    <p>${uploadPost[i].postName}</p>
+                                    <small>location</small>
+                                </div>
+                            </div>
+                            <div class="postOptions">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                        </div>
+                        <div class="postImage">
+                            <img src="${uploadPost[i].postImage}"
+                                alt="posts" />
+                        </div>
+                        <div class="postLikes">
+                            <div class="likeComment">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-comment fa-flip-horizontal"></i>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </div>
+                            <div class="save"><i class="fa-regular fa-bookmark"></i></div>
+                        </div>
+                        <div class="postCaptions">
+                            <b>${uploadPost[i].postName}</b>
+                            <p>${uploadPost[i].postCaption}</p>
+                        </div>
+                        <div class="viewComment">
+                            <b>View 3 comments</b>
+                        </div>
+                        <div class="addComment">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input type="text" placeholder="Add a Comment" />
+                            <b>Post</b>
+                        </div></div>`;
+                    // postCaption += `<p>${uploadPost[i].postCaption}</p>`;
+                }
+                displayName.innerHTML = uploadInstaPost;
+
+                // *********Add Story********
+
+                var displayStoryName = document.getElementById("storyName");
+                var storyName = "";
+
+
+                var storyBackend = JSON.parse(localStorage.getItem("instaStory"));
+                for (var i = 0; i < storyBackend.length; i++) {
+                    storyName += `
+                    <div class="stories">
+                                <div>
+                            <img src="${storyBackend[i].storyImage}" alt="story" />
+                            </div>
+                            <p>${storyBackend[i].storyName}</p></div>
+                        `;
+
+                }
+                displayStoryName.innerHTML = storyName;
+
+                var insta_currentUser = JSON.parse(localStorage.getItem("instaCurrentUser"));
+                var insta_userInfo = JSON.parse(localStorage.getItem("instaUsers"));
+
+                let instaPost = JSON.parse(localStorage.getItem("posts"));
+                for (var i = 0; i < insta_userInfo.length; i++) {
+                    if (insta_currentUser.iEmail == insta_userInfo[i].iEmail) {
+                        if (insta_userInfo[i].iPost == undefined) {
+                            insta_userInfo[i].iPost = [instaPost[i]];
+                            // insta_currentUser.iPost = [instaPost[i]];
+                        } else {
+                            insta_userInfo[i].iPost.push(instaPost[i]);
+                            // insta_currentUser.iPost.push(instaPost[i]);
+                        }
+                    }
+                }
+                localStorage.setItem("instaUsers", JSON.stringify(insta_userInfo));
+                localStorage.setItem("instaCurrentUser", JSON.stringify(insta_currentUser));
+            }
+            function displaySearch() {
+                var get = document.querySelector(".searchBar");
+                if (get.style.display === "none") {
+                    get.style.display = "block";
+                } else {
+                    get.style.display = "none";
+                }
+            }
+            function SearchUser(event) {
+                event.preventDefault();
+
+                var usersList = document.getElementById("searchUsers").value;
+
+                if (usersList) {
+                    var searchResult = document.getElementById("searchResult");
+                    var instaUsersList = JSON.parse(localStorage.getItem("instaUsers"));
+                    var showResult = "";
+                    for (var i = 0; i < instaUsersList.length; i++) {
+                        if (usersList == instaUsersList[i].iName) {
+                            showResult = `
+                        <div class="userList">
+                            <div class="userListName">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <b>${instaUsersList[i].iName}</b>
+                            </div>
+                            <div class="userListFollow">
+                                <p>Follow</p>
+                            </div>
+                    </div>`;
+                        }
+                    }
+                    searchResult.innerHTML = showResult;
+                } else {
+                    // alert("No Matches found");
+                    var noResult = `No users found`;
+                    searchResult.innerHTML = noResult;
+                }
+
+            }
+            function redirectProfile() {
+                window.location.href = `./Profile.html`;
+            }
+            function logout() {
+                localStorage.removeItem("instaCurrentUser");
+                // window.location.reload();
+                window.location.href = `./Login.html`;
+            }
+        </script>
+    </body>
+
+</html>
